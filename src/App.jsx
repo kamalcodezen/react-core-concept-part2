@@ -1,10 +1,16 @@
 import "./App.css";
 
 function App() {
-
   function clickHandle1() {
     alert("button click 1");
   }
+
+
+const clickHandle3 = () => {
+    alert("click button 3");
+  };
+
+
 
   const buttonStyle = {
     marginBottom: "20px",
@@ -19,7 +25,6 @@ function App() {
         Click Me 1
       </button>
 
-
       <button
         style={buttonStyle}
         onClick={function clickHandle2() {
@@ -29,6 +34,9 @@ function App() {
         Click Me 2
       </button>
 
+      <button style={buttonStyle} onClick={() => clickHandle3()}>
+        Click me 3
+      </button>
 
 
 
