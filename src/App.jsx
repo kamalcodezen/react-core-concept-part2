@@ -1,6 +1,9 @@
 import "./App.css";
 
 import Counter from "./Counter";
+import Players from "./Sports";
+
+import Sports from "./Sports";
 
 function App() {
   function clickHandle1() {
@@ -23,6 +26,8 @@ function App() {
   return (
     <>
       <h1>Get started</h1>
+
+      <Players></Players>
 
       <Counter></Counter>
 

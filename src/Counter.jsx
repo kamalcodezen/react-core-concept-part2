@@ -13,8 +13,9 @@ export default function Counter() {
   //   style
   const counterStyle = {
     marginBottom: "10px",
+    marginTop: "20px",
     border: "2px solid yellow",
-    padding: "40px",
+    padding: "20px",
     fontSize: "20px",
   };
 
