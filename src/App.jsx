@@ -11,6 +11,10 @@ const clickHandle3 = () => {
   };
 
 
+const clickHandle5 = (num)=>{
+  alert(num * 5)
+}
+
 
   const buttonStyle = {
     marginBottom: "20px",
@@ -41,6 +45,11 @@ const clickHandle3 = () => {
 
       <button style={buttonStyle} onClick={() => {alert("click button 4")}}>
         Click me 4
+      </button>
+
+
+      <button style={buttonStyle} onClick={() => clickHandle5(8)}>
+        Click me 5
       </button>
 
 
