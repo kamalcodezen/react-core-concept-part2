@@ -39,6 +39,11 @@ const clickHandle3 = () => {
       </button>
 
 
+      <button style={buttonStyle} onClick={() => {alert("click button 4")}}>
+        Click me 4
+      </button>
+
+
 
     </>
   );
