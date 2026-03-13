@@ -32,11 +32,11 @@ function App() {
     <>
       <h1>Get started</h1>
 
-      <Suspense fallback={<h3>Loading...</h3>}>
+      <Suspense fallback={<h3 className="users">Lo Lo Loading...</h3>}>
         <Users fetchUsers={fetchUsers}></Users>
-      </Suspense>
+      </Suspense> 
 
-      <Users></Users>
+     
 
       <Players></Players>
 
