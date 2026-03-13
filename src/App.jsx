@@ -9,9 +9,13 @@ import Friends from "./Friends";
 import Posts from "./posts";
 import ShowHideText from "./hide_show_text";
 
-// const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
-//   (res) => res.json(),
-// );
+const fetchUsersApi = async () => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/users");
+  return await res.json();
+};
+
+
+
 
 // const friendsApi = async () => {
 //   const res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -25,6 +29,9 @@ import ShowHideText from "./hide_show_text";
 // };
 
 function App() {
+
+const fetchUsers = fetchUsersApi();
+
   // const friends = friendsApi();
   // const postsApi = fetchPosts();
 
@@ -48,6 +55,10 @@ function App() {
   return (
     <>
       <h1>Get started React</h1>
+
+      <Suspense fallback={<h3>User Data Loading</h3>}>
+        <Users fetchUsers={fetchUsers}></Users>
+      </Suspense>
 
       <ShowHideText></ShowHideText>
 
