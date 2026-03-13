@@ -1,5 +1,5 @@
 export default function Post({ post }) {
-  const { id, title, userId } = post;
+  const { id, title} = post;
 
   return (
     <div className="users">

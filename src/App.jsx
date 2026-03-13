@@ -18,14 +18,14 @@ import Posts from "./posts";
 //   return data;
 // };
 
-const fetchPosts = async () => {
-  const res = fetch("https://jsonplaceholder.typicode.com/posts");
-  return (await res).json();
-};
+// const fetchPosts = async () => {
+//   const res = fetch("https://jsonplaceholder.typicode.com/posts");
+//   return (await res).json();
+// };
 
 function App() {
   // const friends = friendsApi();
-  const postsApi = fetchPosts();
+  // const postsApi = fetchPosts();
 
   function clickHandle1() {
     alert("button click 1");
@@ -46,11 +46,13 @@ function App() {
 
   return (
     <>
-      <h1>Get started</h1>
+      <h1>Get started React</h1>
 
-      <Suspense fallback={<h3>Post is loading</h3>}>
+      <Counter></Counter>
+
+      {/* <Suspense fallback={<h3>Post is loading</h3>}>
         <Posts fetchPost={postsApi}></Posts>
-      </Suspense>
+      </Suspense> */}
 
       {/* 
       <Suspense fallback={<h3>Async Await Loading.....</h3>}>
@@ -63,7 +65,7 @@ function App() {
 
       <Players></Players>
 
-      <Counter></Counter>
+      {/* <Counter></Counter> */}
 
       <button style={buttonStyle} onClick={clickHandle1}>
         Click Me 1

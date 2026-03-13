@@ -9,7 +9,7 @@ export default function Posts({ fetchPost }) {
     <div className="users">
       <h3>All Post Details : {posts.length}</h3>
       {
-        posts.map(post => <Post post={post}></Post>)
+        posts.map(post => <Post key={post.id} post={post}></Post>)
       }
     </div>
   );
