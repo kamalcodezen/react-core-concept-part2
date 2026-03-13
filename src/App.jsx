@@ -7,6 +7,7 @@ import Sports from "./Sports";
 import Users from "./Users";
 import Friends from "./Friends";
 import Posts from "./posts";
+import ShowHideText from "./hide_show_text";
 
 // const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
 //   (res) => res.json(),
@@ -47,6 +48,8 @@ function App() {
   return (
     <>
       <h1>Get started React</h1>
+
+      <ShowHideText></ShowHideText>
 
       <Counter></Counter>
 
