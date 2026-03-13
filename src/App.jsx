@@ -6,19 +6,26 @@ import Players from "./Sports";
 import Sports from "./Sports";
 import Users from "./Users";
 import Friends from "./Friends";
+import Posts from "./posts";
 
-const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
-  (res) => res.json(),
-);
+// const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
+//   (res) => res.json(),
+// );
 
-const friendsApi = async () => {
-  const res = await fetch("https://jsonplaceholder.typicode.com/users");
-  const data = res.json();
-  return data;
+// const friendsApi = async () => {
+//   const res = await fetch("https://jsonplaceholder.typicode.com/users");
+//   const data = res.json();
+//   return data;
+// };
+
+const fetchPosts = async () => {
+  const res = fetch("https://jsonplaceholder.typicode.com/posts");
+  return (await res).json();
 };
 
 function App() {
-  const friends = friendsApi();
+  // const friends = friendsApi();
+  const postsApi = fetchPosts();
 
   function clickHandle1() {
     alert("button click 1");
@@ -41,13 +48,18 @@ function App() {
     <>
       <h1>Get started</h1>
 
+      <Suspense fallback={<h3>Post is loading</h3>}>
+        <Posts fetchPost={postsApi}></Posts>
+      </Suspense>
+
+      {/* 
       <Suspense fallback={<h3>Async Await Loading.....</h3>}>
         <Friends friendsApi={friends}></Friends>
       </Suspense>
 
       <Suspense fallback={<h3 className="users">Lo Lo Loading...</h3>}>
         <Users fetchUsers={fetchUsers}></Users>
-      </Suspense>
+      </Suspense> */}
 
       <Players></Players>
 
