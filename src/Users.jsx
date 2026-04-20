@@ -7,7 +7,7 @@ export default function Users({ fetchUsers }) {
   return (
     <div>
       <h1>Hello React User</h1>
-      {users.map((user) => (
+      {users.map((user) => ( 
         <User key={user.id} user={user}></User>
       ))}
     </div>

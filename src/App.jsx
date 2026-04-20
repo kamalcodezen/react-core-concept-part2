@@ -1,6 +1,6 @@
 import { Suspense } from "react";
 import "./App.css";
-
+import Countries from "./components/Countries/Countries";
 import Counter from "./Counter";
 import Players from "./Sports";
 import Sports from "./Sports";
@@ -14,8 +14,10 @@ const fetchUsersApi = async () => {
   return await res.json();
 };
 
-
-
+const countriesFetch = async () => {
+  const res = await fetch("https://openapi.programming-hero.com/api/all");
+  return res.json();
+};
 
 // const friendsApi = async () => {
 //   const res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -29,8 +31,9 @@ const fetchUsersApi = async () => {
 // };
 
 function App() {
+  const fetchUsers = fetchUsersApi();
 
-const fetchUsers = fetchUsersApi();
+  const countriesPromise = countriesFetch();
 
   // const friends = friendsApi();
   // const postsApi = fetchPosts();
@@ -55,6 +58,10 @@ const fetchUsers = fetchUsersApi();
   return (
     <>
       <h1>Get started React</h1>
+
+      <Suspense fallback={<p>Countries Data is Loading.....</p>}>
+        <Countries countriesFetch={countriesPromise}></Countries>
+      </Suspense>
 
       <Suspense fallback={<h3>User Data Loading</h3>}>
         <Users fetchUsers={fetchUsers}></Users>
