@@ -1,0 +1,27 @@
+.countries {
+    border: 1px solid rgba(0, 255, 255, 0.526);
+    border-radius: 8px;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    
+}
+
+.country-btn {
+    padding-inline: 10px;
+    padding-block: 5px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 255, 255, 0.702);
+    background-color: transparent;
+    cursor: pointer;
+    width: fit-content;
+    margin-inline: auto;
+}
+
+.country-btn:hover {
+    background-color: rgba(0, 255, 255, 0.446);
+    box-shadow: 0px 0px 2px 2px;
+}
