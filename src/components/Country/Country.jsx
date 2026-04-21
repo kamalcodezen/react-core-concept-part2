@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Country = ({ country }) => {
-  console.log(country);
+  // console.log(country);
+  const [visited, setVisited] = useState(false);
 
   const handleVisited = () => {
-    console.log("button was clicked");
+    // setVisited(visited ? false : true);
+    setVisited(!visited);
   };
 
   const countryCss = {
@@ -20,7 +22,7 @@ const Country = ({ country }) => {
   };
 
   return (
-    <div style={countryCss}>
+    <div style={countryCss} className={`${visited && "country-visited"}`}>
       <img
         style={{ height: "100px", width: "200px", marginInline: "auto" }}
         src={country.flags.flags.png}
@@ -29,7 +31,7 @@ const Country = ({ country }) => {
       <p>Name : {country.name.common}</p>
       <p>Region :{country.region.region}</p>
       <button className="country-btn" onClick={handleVisited}>
-        Clicked me
+        {visited ? "Visited" : "Not visited"}
       </button>
     </div>
   );
