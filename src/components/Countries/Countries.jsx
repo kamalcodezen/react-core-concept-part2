@@ -6,15 +6,28 @@ const Countries = ({ countriesFetch }) => {
   const countriesData = use(countriesFetch);
   const countries = countriesData.countries;
 
-  const [visitedCountries, setvisitedCountries] = useState([]);
+  const [visitedCountries, setVisitedCountries] = useState([]);
+ 
+
   const handleVisitedCountries = (country) => {
-    console.log("visited button clicked", country);
+    const newVisitedCountry = [...visitedCountries, country];
+    setVisitedCountries(newVisitedCountry);
+    // console.log(visitedCountries);
   };
+
+
+
 
   return (
     <div>
       <h1>Countries : {countries.length}</h1>
-      <h2>Visited Country : {visitedCountries}</h2>
+      <h2>Visited Country : {visitedCountries.length}</h2>
+
+      <ol>
+        {visitedCountries.map((visitCountry) => (
+          <li>{visitCountry.name.common}</li>
+        ))}
+      </ol>
       <div className="countries">
         {countries.map((country) => (
           <Country
