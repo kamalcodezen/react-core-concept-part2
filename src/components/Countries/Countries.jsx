@@ -3,20 +3,23 @@ import Country from "../Country/Country";
 import "./Countries.css";
 
 const Countries = ({ countriesFetch }) => {
+  // api data promise use
   const countriesData = use(countriesFetch);
   const countries = countriesData.countries;
 
+  // useState hook declare data ui update
   const [visitedCountries, setVisitedCountries] = useState([]);
- 
+  const [visitedFlag, setVisitedFlag] = useState([]);
 
+  // handleButton function
   const handleVisitedCountries = (country) => {
     const newVisitedCountry = [...visitedCountries, country];
     setVisitedCountries(newVisitedCountry);
-    // console.log(visitedCountries);
   };
 
-
-
+  const handleVisitedFlag = (flag) => {
+    setVisitedFlag([...visitedFlag, flag]);
+  };
 
   return (
     <div>
@@ -28,12 +31,21 @@ const Countries = ({ countriesFetch }) => {
           <li>{visitCountry.name.common}</li>
         ))}
       </ol>
+
+      <ol>
+        {visitedFlag.map((flag) => (
+          <img  style={{ height: "50px", width: "80px" }}
+          src={flag}></img>
+        ))}
+      </ol>
+
       <div className="countries">
         {countries.map((country) => (
           <Country
             key={country.ccn3.ccn3}
             country={country}
             handleVisitedCountries={handleVisitedCountries}
+            handleVisitedFlag={handleVisitedFlag}
           ></Country>
         ))}
       </div>

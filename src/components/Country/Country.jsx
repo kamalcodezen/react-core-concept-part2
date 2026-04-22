@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 
-const Country = ({ country, handleVisitedCountries }) => {
+const Country = ({ country, handleVisitedCountries, handleVisitedFlag }) => {
   // console.log(country);
   const [visited, setVisited] = useState(false);
-
 
   const handleVisited = () => {
     // setVisited(visited ? false : true);
@@ -32,9 +31,19 @@ const Country = ({ country, handleVisitedCountries }) => {
       />
       <p>Name : {country.name.common}</p>
       <p>Region :{country.region.region}</p>
-      <button className="country-btn" onClick={handleVisited}>
-        {visited ? "Visited" : "Not visited"}
-      </button>
+      <div style={{display : "flex"}}>
+        <button className="country-btn" onClick={handleVisited}>
+          {visited ? "Visited" : "Not visited"}
+        </button>
+        <button
+          className="country-btn"
+          onClick={() => {
+            handleVisitedFlag(country.flags.flags.png);
+          }}
+        >
+          Visited Flag
+        </button>
+      </div>
     </div>
   );
 };
