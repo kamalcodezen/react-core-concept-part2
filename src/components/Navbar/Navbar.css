@@ -1,3 +1,20 @@
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    border: 2px solid rgba(0, 255, 255, 0.439);
+    border-radius: 100px;
+
+}
+
+.nav-logo {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    position: relative;
+}
+
 .nav-link {
     display: flex;
     gap: 20px;
@@ -14,4 +31,27 @@
 .nav-link li a {
     text-decoration: none;
     color: rgb(203, 222, 135);
+}
+
+.dropdown-link{
+position: absolute;
+flex-direction: column;
+margin-top: 270px;
+background-color: rgba(0, 76, 255, 0.992);
+padding-inline: 100px;
+padding-block: 20px;
+border-radius: 10px;
+transform: translateY(-900px);
+}
+.dropdown-link-2{
+position: absolute;
+flex-direction: column;
+background-color: rgba(0, 76, 255, 0.992);
+padding-inline: 100px;
+padding-block: 20px;
+border-radius: 10px;
+transform: translateY(100px);
+}
+.nav-dropdown li{
+    text-decoration: none;
 }
