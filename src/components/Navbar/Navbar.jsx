@@ -1,5 +1,6 @@
 import React from "react";
-
+import "./Navbar.css";
+import Link from "./Link";
 const Navbar = () => {
   const navLinks = [
     { id: 1, name: "Home", path: "/" },
@@ -9,9 +10,21 @@ const Navbar = () => {
   ];
   return (
     <div>
+      {/* 3rd way */}
+      <ul className="nav-link">
+        {navLinks.map((route,ind) => (
+          <Link key={ind} route={route}></Link>
+        ))}
+      </ul>
 
-
-
+      {/* 2nd way */}
+      {/* <ul className="nav-link">
+        {navLinks.map((route, ind) => (
+          <li key={ind}>
+            <a href={route.path}>{route.name}</a>
+          </li>
+        ))}
+      </ul> */}
 
       {/* basic way */}
       {/* <ul>
