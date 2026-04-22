@@ -33,8 +33,8 @@ const Countries = ({ countriesFetch }) => {
       </ol>
 
       <ol>
-        {visitedFlag.map((flag) => (
-          <img  style={{ height: "50px", width: "80px" }}
+        {visitedFlag.map((flag,ind) => (
+          <img key={ind} style={{ height: "50px", width: "80px" }}
           src={flag}></img>
         ))}
       </ol>

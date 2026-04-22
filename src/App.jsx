@@ -8,6 +8,7 @@ import Users from "./Users";
 import Friends from "./Friends";
 import Posts from "./posts";
 import ShowHideText from "./hide_show_text";
+import Navbar from "./components/Navbar/Navbar";
 
 const fetchUsersApi = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/users");
@@ -57,6 +58,7 @@ function App() {
 
   return (
     <>
+      <Navbar />
       <h1>Get started React</h1>
 
       <Suspense fallback={<p>Countries Data is Loading.....</p>}>
